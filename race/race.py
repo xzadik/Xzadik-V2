@@ -17,7 +17,17 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "A Bot by: >_Xzadik & CRZA5"
 
-animals = ((':Weary:', 'fast'))
+animals = ((':Weary:', 'fast'), (':Weary:', 'fast'), (':Weary:', 'fast'), (':Weary:', 'slow'),
+           (':Weary:', 'fast'), (':Weary:', 'fast'), (':Weary:', 'fast'), (':Weary:', 'fast'),
+           (':Weary:', 'steady'), (':Weary:', 'steady'), (':Weary:', 'steady'),
+           (':Weary:', 'steady'), (':Weary:', 'steady'), (':Weary:', 'abberant'),
+           (':Weary:', 'abberant'), (':Weary:', 'abberant'), (':Weary:', 'abberant'),
+           (':Weary:', 'abberant'), (':Weary:', 'abberant'), (':Weary:', 'abberant'),
+           (':Weary:', 'predator'), (':Weary:', 'predator'), (':Weary:', 'special'),
+           (':Weary:', 'special'), (':Weary:', 'slow'), (':Weary:', 'slow'), (':Weary:', 'slow'),
+           (':Weary:', 'slow'), (':Weary:', 'slow'), (':Weary:', 'slow'), (':Weary:', 'slow'),
+           (':Weary:', 'slow'), (':Weary:', 'slow'), (':Weary:', 'slow'))
+
 
 
 class PluralDict(dict)
