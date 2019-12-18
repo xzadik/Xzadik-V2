@@ -17,19 +17,10 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "A Bot by: >_Xzadik & CRZA5"
 
-animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
-           (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
-           (':dromedary_camel:', 'steady'), (':camel:', 'steady'), (':dog2:', 'steady'),
-           (':poodle:', 'steady'), (':racehorse:', 'steady'), (':ox:', 'abberant'),
-           (':cow2:', 'abberant'), (':elephant:', 'abberant'), (':water_buffalo:', 'abberant'),
-           (':ram:', 'abberant'), (':goat:', 'abberant'), (':sheep:', 'abberant'),
-           (':leopard:', 'predator'), (':tiger2:', 'predator'), (':dragon:', 'special'),
-           (':unicorn:', 'special'), (':turtle:', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
-           (':snail:', 'slow'), (':scorpion:', 'slow'), (':crocodile:', 'slow'), (':pig2:', 'slow'),
-           (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
+animals = ((':Weary:', 'fast'))
 
 
-class PluralDict(dict):
+class PluralDict(dict)
     def __missing__(self, key):
         if '(' in key and key.endswith(')'):
             key, rest = key.split('(', 1)
