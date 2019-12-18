@@ -14,8 +14,8 @@ from __main__ import send_cmd_help
 from .utils import checks
 from .utils.dataIO import dataIO
 
-creditIcon = "https://i.imgur.com/a0lbPXh.png"
-credits = "A Bot by: >_Xzadik & CRZA5"
+creditIcon = "https://i.imgur.com/kHoWBzl.png"
+credits = "Bot by >_Xzadik | CRZA5"
 
 animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
            (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
@@ -29,7 +29,7 @@ animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':m
            (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
 
 
-class PluralDict(dict)
+class PluralDict(dict):
     def __missing__(self, key):
         if '(' in key and key.endswith(')'):
             key, rest = key.split('(', 1)
@@ -55,7 +55,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = " **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<:elixir:488709583418687539> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
@@ -357,7 +357,7 @@ class Race:
         cooldown = self.check_cooldown(author.server)
         settings = self.check_config(author.server)
         cost = settings["Cost"]
-        timer = 300
+        timer = 600
 
         channel = ctx.message.channel
         if channel.name != "race":
@@ -367,7 +367,7 @@ class Race:
             if author.id in data['Players']:
                 return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
             elif len(data['Players']) == 10:
                 return await self.bot.say("There are no more spots left in the race!")
             else:
@@ -397,7 +397,7 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
+        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}re`` "
                            "to join! :triangular_flag_on_post:\n{}The {} will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
@@ -436,7 +436,7 @@ class Race:
         embed.add_field(name=first, value=fv)
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
-        embed.add_field(name='-' * 70, value='Type ``>race claim`` to receive prize money. \nType ``>togglerole race`` to get notified on the next race.')
+        embed.add_field(name='-' * 70, value='Type ``!race claim`` to receive prize money. \nType ``!togglerole race`` to get notified on the next race.')
         embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
