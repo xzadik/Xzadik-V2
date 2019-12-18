@@ -397,7 +397,7 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
+        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}re`` "
                            "to join! :triangular_flag_on_post:\n{}The {} will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
