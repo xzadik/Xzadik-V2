@@ -55,7 +55,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:elixir:488709583418687539> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<:elixir:656983766774054924> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
