@@ -367,7 +367,7 @@ class Race:
             if author.id in data['Players']:
                 return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
             elif len(data['Players']) == 10:
                 return await self.bot.say("There are no more spots left in the race!")
             else:
