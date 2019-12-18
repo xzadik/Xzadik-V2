@@ -506,7 +506,7 @@ class Heist:
 
         channel = ctx.message.channel
         if channel.name != "heist":
-            await self.bot.say("You cannot run this command in this channel. Please run this command at #heist")
+            await self.bot.say("You cannot run this command in this channel. Please run this command at <#3656574170846462012>")
             return
 
         self.account_check(settings, author)
