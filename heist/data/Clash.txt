@@ -1,0 +1,96 @@
+|Good| "{0} distracted a mini P.E.K.K.A with a butterfly. +500 credits.", 500
+|Good| "{0} brought a cannon cart for everyone to ride. +75 credits.", 75
+|Good| "{0} threw a goblin barrel inside the bank. +500 credits.", 500
+|Good| "{0} stayed with the cannon cart and had it ready. +500 credits", 500
+|Good| "{0} cut through the security like a P.E.K.K.A. +750 credits", 750
+|Good| "{0} pulled down the wizard's hood and distracted everyone. +500 credits", 500
+|Good| "{0} stopped the princess from firing at their comrades. +75 credits", 75
+|Good| "{0} sent goblins to loot. +500 credits", 500
+|Good| "{0} was distracting the archer by showing their archery skills. +75 credits", 75
+|Good| "{0} used a skeleton barrel to distract the archers. +75 credits", 75
+|Good| "{0} stole a hog. +500 credits", 500
+|Good| "{0} got the guards to deliver everyone pizza. +25 credits", 25
+|Good| "{0} saved the crew with a heal spell. +25 credits", 25
+|Good| "{0} stole a balloon and got away. +75 credits", 75
+|Good| "{0} befriended a doot. +500 credits.", 500
+|Good| "{0} reprogrammed the flying machine to attack the guards. +1000 credits", 1000
+|Good| "The baby dragon's fumes hid {0} while they were stealing the gold. +750 credits", 750
+|Good| "{0} brought sleeping gas for the guards. +500 credits", 500
+|Good| "{0} found a miner's tunnel! +2000 credits", 2000
+|Good| "{0} released the Royal Hogs to distract the guards +500 credits.", 500
+|Good| "{0} cloned the crew to confuse the guardsmen +250 credits.", 250
+|Good| "{0} used a Rage spell to run past everyone and escaped +20 credits.", 20
+|Good| "{0} rode the Goblin Giant to escape +100 credits.", 100
+
+|Bad| "A butterfly brought P.E.K.K.A. to {0}.", "Dead"
+|Bad| "The Magic Archer took out {0} from far away. Where did he come from?", "Dead"
+|Bad| "{0} made a big mistake and got caught by the 3 musketeers.", "Apprehended"
+|Bad| "The baby dragon found something new for their barbeque, grilled {0}", "Dead" 
+|Bad| "The Dark Prince charged at {0} and got them with his mace.", "Dead"
+|Bad| "The witch used her destructo beams on {0}", "Dead"
+|Bad| "What's that in the sky? A skeleton barrel fell on {0} and they got surrounded!", "Apprehended"
+|Bad| "A princess caught {0} on fire!", "Apprehended"
+|Bad| "The Barbarian Barrel crushed and sliced {0}", "Dead"
+|Bad| "The Royal Ghost snuck up on {0}", "Apprehended"
+|Bad| "A goblin barrel landed right on {0}.", "Apprehended"
+|Bad| "The Zappies made {0} unable to move and they got captured.", "Apprehended"
+|Bad| "The Executioner did its job with {0}", "Dead"
+|Bad| "A Valkyrie spun into {0}", "Dead"
+|Bad| "{0} forgot about the lava hound's pups", "Apprehended"
+|Bad| "{0} probably shouldn't have brought arrows to a rocket fight.", "Apprehended"
+|Bad| "The tornado brings {0} straight to the dungeon.", "Apprehended"
+|Bad| "The lumberjack decided to chop something other than wood and chopped {0} into pieces.", "Dead"
+|Bad| "{0} found a mini P.E.K.K.A.", "Apprehended"
+|Bad| "{0} got blown up by a bomber.", "Dead"
+|Bad| "{0} got pounded by a mega knight.", "Dead"
+|Bad| "{0} got surrounded by a skeleton army.", "Apprehended"
+|Bad| "{0} fell into a tombstone and got trapped.", "Apprehended"
+|Bad| "{0} was burned by a wizard and got thrown into jail.", "Apprehended"
+|Bad| "An archer was doing trick shots and hit {0}.", "Apprehended"
+|Bad| "Hog rider ran over {0}.", "Apprehended"
+|Bad| "The guards found {0}.", "Apprehended"
+|Bad| "A balloon dropped a bomb on {0}.", "Dead"
+|Bad| "A dart goblin shot {0} with a paralysis dart.", "Apprehended"
+|Bad| "The bats heard {0} while they tried to escape through a cave.", "Apprehended"
+|Bad| "The bowler bowled {0} straight to the dungeon.", "Apprehended"
+|Bad| "The miner caught {0} in his tunnels.", "Apprehended"
+|Bad| "{0} got injured from the prince's lance.", "Apprehended"
+|Bad| "{0} was surrounded by the witch's skeletons and was captured.", "Apprehended"
+|Bad| "{0} was surrounded by the enemy and captured.", "Apprehended"
+|Bad| "The barbarians found {0}.", "Apprehended"
+|Bad| "{0} was frozen by an Ice Spirit and was captured.", "Apprehended"
+|Bad| "{0} got shot by a musketeer while trying to escape, but survived!", "Apprehended"
+|Bad| "{0} was sniped by a princess. Gotcha!", "Dead"
+|Bad| "{0} exploded from a Giant Skeleton's bomb.", "Dead"
+|Bad| "{0} triggered a tesla.", "Dead"
+|Bad| "Lightning struck {0} and was electrocuted.", "Dead"
+|Bad| "The last thing {0} saw was Sparky's shot charged up.", "Dead"
+|Bad| "{0} tried to sneak behind a giant but failed.", "Apprehended"
+|Bad| "{0} tripped on a log.", "Apprehended"
+|Bad| "{0} got distracted by an ice golem and didn't realize they were captured until it was too late.", "Apprehended"
+|Bad| "{0} got zapped by an electro wizard and got arrested.", "Apprehended"
+|Bad| "The inferno tower cooked {0}. How did they survive?", "Apprehended"
+|Bad| "{0} was caught by a bandit at the last minute.", "Apprehended"
+|Bad| "The Mega Knight smushed {0}.", "Dead"
+|Bad| "A swarm of goblins stabbed {0} to death.", "Dead"
+|Bad| "The Magic Archer's arrow pierced through {0}.", "Dead"
+|Bad| "Zappies stunned {0} and captured them.", "Apprehended"
+|Bad| "The Hunter hunted down {0}.", "Apprehended"
+|Bad| "The Royal Ghost jump-scared {0}.", "Apprehended"
+|Bad| "{0} was buried in a Giant Snowball.", "Apprehended"
+|Bad| "{0} was trampled by the Royal Hogs.", "Apprehended"
+|Bad| "Rascals trapped {0} in bubble gum.", "Apprehended"
+|Bad| "Battle Ram smashed {0} out of the way.", "Apprehended"
+|Bad| "The Cannon shot {0}.", "Dead"
+|Bad| "Fire Spirits gave a warm hug to {0}.", "Apprehended"
+|Bad| "{0} was poisoned.", "Dead"
+
+
+Jail = dungeon
+OOB = out on bail
+Police = guards
+Bail = bail
+Crew = crew
+Sentence = sentence
+Heist = raid
+Vault = gold
