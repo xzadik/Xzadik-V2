@@ -55,7 +55,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:656770385684987914:> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<https://cdn.discordapp.com/emojis/656720974695366668.png?v=1> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
