@@ -383,7 +383,7 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
 
         role_name = "Race"
         raceRole = discord.utils.get(server.roles, name=role_name)
@@ -397,7 +397,7 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}re`` "
+        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
                            "to join! :triangular_flag_on_post:\n{}The {} will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
