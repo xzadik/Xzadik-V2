@@ -17,14 +17,14 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "Bot by >_Xzadik | CRZA5"
 
-animals = (('<:Rainbow:650494232209129502>', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
+animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
            (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
            (':dromedary_camel:', 'steady'), (':camel:', 'steady'), (':dog2:', 'steady'),
            (':poodle:', 'steady'), (':racehorse:', 'steady'), (':ox:', 'abberant'),
            (':cow2:', 'abberant'), (':elephant:', 'abberant'), (':water_buffalo:', 'abberant'),
            (':ram:', 'abberant'), (':goat:', 'abberant'), (':sheep:', 'abberant'),
            (':leopard:', 'predator'), (':tiger2:', 'predator'), (':dragon:', 'special'),
-           (':unicorn:', 'special'), ('<:Bubble:650494146422898698>', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
+           (':unicorn:', 'special'), (':turtle:', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
            (':snail:', 'slow'), (':scorpion:', 'slow'), (':crocodile:', 'slow'), (':pig2:', 'slow'),
            (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
 
@@ -361,7 +361,7 @@ class Race:
 
         channel = ctx.message.channel
         if channel.name != "race":
-            return await self.bot.say("You cannot run this command in this channel. Please run this command at #race")
+            return await self.bot.say("You cannot run this command in this channel. Please run this command in #race")
 
         if data['Race Active']:
             if author.id in data['Players']:
@@ -436,7 +436,7 @@ class Race:
         embed.add_field(name=first, value=fv)
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
-        embed.add_field(name='-' * 70, value='Type ``!race claim`` to receive prize money. \nType ``!togglerole race`` to get notified on the next race.')
+        embed.add_field(name='-' * 70, value='Type ``>race claim`` to receive prize money. \nType ``>togglerole race`` to get notified on the next race.')
         embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
@@ -592,7 +592,7 @@ class Race:
         elif mode == 'brawlstars':
             characters = self.getBSChars()
         else:
-            characters = (("<:Bubble:650494146422898698>", "slow"), ('<:Rainbow:650494232209129502>', 'fast'))
+            characters = ((":turtle:", "slow"), (':rabbit2:', 'fast'))
 
         if len(data['Players']) == 1:
             bot_set = random.choice(characters)
