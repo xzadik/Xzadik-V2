@@ -17,7 +17,7 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "Bot by >_Xzadik | CRZA5"
 
-animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
+animals = (('<:Rainbow:650494232209129502>', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
            (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
            (':dromedary_camel:', 'steady'), (':camel:', 'steady'), (':dog2:', 'steady'),
            (':poodle:', 'steady'), (':racehorse:', 'steady'), (':ox:', 'abberant'),
@@ -592,7 +592,7 @@ class Race:
         elif mode == 'brawlstars':
             characters = self.getBSChars()
         else:
-            characters = ((":turtle:", "slow"), (':rabbit2:', 'fast'))
+            characters = (("<:Bubble:650494146422898698>", "slow"), ('<:Rainbow:650494232209129502>', 'fast'))
 
         if len(data['Players']) == 1:
             bot_set = random.choice(characters)
