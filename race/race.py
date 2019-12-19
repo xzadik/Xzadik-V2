@@ -55,7 +55,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:manga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<:crmanga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
@@ -592,7 +592,7 @@ class Race:
         elif mode == 'brawlstars':
             characters = self.getBSChars()
         else:
-            characters = ((":turtle:", "slow"), (':rabbit2:', 'fast'))
+            characters = (("<:crbubble:657129951128059943>", "slow"), ('<:crmask:657129851442036736>', 'fast'))
 
         if len(data['Players']) == 1:
             bot_set = random.choice(characters)
