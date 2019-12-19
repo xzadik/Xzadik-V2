@@ -24,7 +24,7 @@ animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':m
            (':cow2:', 'abberant'), (':elephant:', 'abberant'), (':water_buffalo:', 'abberant'),
            (':ram:', 'abberant'), (':goat:', 'abberant'), (':sheep:', 'abberant'),
            (':leopard:', 'predator'), (':tiger2:', 'predator'), (':dragon:', 'special'),
-           (':unicorn:', 'special'), (':turtle:', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
+           (':unicorn:', 'special'), ('<:Bubble:650494146422898698>', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
            (':snail:', 'slow'), (':scorpion:', 'slow'), (':crocodile:', 'slow'), (':pig2:', 'slow'),
            (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
 
