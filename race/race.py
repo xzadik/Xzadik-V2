@@ -436,7 +436,7 @@ class Race:
         embed.add_field(name=first, value=fv)
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
-        embed.add_field(name='-' * 70, value='Type ``>race claim`` to receive prize money. \nType ``>togglerole race`` to get notified on the next race.')
+        embed.add_field(name='-' * 70, value='Type ``=race claim`` to receive prize money. \nType ``=togglerole race`` to get notified on the next race.')
         embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
