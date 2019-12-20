@@ -17,13 +17,13 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "Bot by >_Xzadik | CRZA5"
 
-animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
+animals = (('<:crHmph:650352968427634708>', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
            (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
            (':dromedary_camel:', 'steady'), (':camel:', 'steady'), (':dog2:', 'steady'),
            (':poodle:', 'steady'), (':racehorse:', 'steady'), (':ox:', 'abberant'),
            (':cow2:', 'abberant'), (':elephant:', 'abberant'), (':water_buffalo:', 'abberant'),
            (':ram:', 'abberant'), (':goat:', 'abberant'), (':sheep:', 'abberant'),
-           (':leopard:', 'predator'), (':tiger2:', 'predator'), (':dragon:', 'special'),
+           (':leopard:', 'predator'), (':tiger2:', 'predator'), ('<:crLove:650493813483110453>', 'special'),
            (':unicorn:', 'special'), (':turtle:', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
            (':snail:', 'slow'), (':scorpion:', 'slow'), (':crocodile:', 'slow'), (':pig2:', 'slow'),
            (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
@@ -592,7 +592,7 @@ class Race:
         elif mode == 'brawlstars':
             characters = self.getBSChars()
         else:
-            characters = (("<:crbubble:657129951128059943>", "slow"), ('<:crmask:657129851442036736>', 'fast'))
+            characters = (("<:crNeko:650494103775215677>", "slow"), ('<:crAngry:650494450090377231>', 'fast'))
 
         if len(data['Players']) == 1:
             bot_set = random.choice(characters)
