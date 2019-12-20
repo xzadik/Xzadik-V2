@@ -15,7 +15,7 @@ from .utils import checks
 from .utils.dataIO import dataIO
 
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
-credits = "Bot by >_Xzadik | CRZA5"
+credits = "A Bot by >_Xzadik | CRZA5"
 
 animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:650464598247473197>', 'fast'), 
            ('<:crAngry:650494450090377231>', 'fast'), ('<:crThinking:650494535989985286>', 'slow'),
@@ -381,7 +381,7 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} CrunchyCoins.".format(cost))
 
         role_name = "Race"
         raceRole = discord.utils.get(server.roles, name=role_name)
@@ -434,7 +434,7 @@ class Race:
         embed.add_field(name=first, value=fv)
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
-        embed.add_field(name='-' * 70, value='Type ``=race claim`` to receive prize money.')
+        embed.add_field(name='-' * 70, value='Type ``cg!race claim`` to receive prize money.')
         embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
