@@ -17,16 +17,14 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "Bot by >_Xzadik | CRZA5"
 
-animals = (('<:crHmph:650352968427634708>', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
-           (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
-           (':dromedary_camel:', 'steady'), (':camel:', 'steady'), (':dog2:', 'steady'),
-           (':poodle:', 'steady'), (':racehorse:', 'steady'), (':ox:', 'abberant'),
-           (':cow2:', 'abberant'), (':elephant:', 'abberant'), (':water_buffalo:', 'abberant'),
-           (':ram:', 'abberant'), (':goat:', 'abberant'), (':sheep:', 'abberant'),
-           (':leopard:', 'predator'), (':tiger2:', 'predator'), ('<:crLove:650493813483110453>', 'special'),
-           (':unicorn:', 'special'), (':turtle:', 'slow'), (':bug:', 'slow'), (':rooster:', 'slow'),
-           (':snail:', 'slow'), (':scorpion:', 'slow'), (':crocodile:', 'slow'), (':pig2:', 'slow'),
-           (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
+animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:650464598247473197>', 'fast'), 
+           ('<:crAngry:650494450090377231>', 'fast'), ('<:crThinking:650494535989985286>', 'slow'),
+           ('<:crAaah:650465279180013600>', 'fast'), ('<:crOK:650271965801611275>', 'fast'), 
+           ('<:crNo:650353277614948362>', 'fast'), ('<:crGood:650352539728085027>', 'steady'), 
+           ('<:crBubble:650494146422898698>', 'abberant'), ('<:crGlasses:650493868760104979>', 'abberant'),
+           ('<:crToxic:650494681712427031>', 'predator'), ('<:crStare:650464500541030410>', 'predator'), 
+           ('<:crLove:650493813483110453>', 'special'), ('<:crThankyou:650352813133660160>', 'special'), 
+           ('<:crSure:650494612573650944>', 'slow'), ('<:crNeko:650494103775215677>', 'slow'))
 
 
 class PluralDict(dict):
@@ -436,7 +434,7 @@ class Race:
         embed.add_field(name=first, value=fv)
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
-        embed.add_field(name='-' * 70, value='Type ``=race claim`` to receive prize money. \nType ``=togglerole race`` to get notified on the next race.')
+        embed.add_field(name='-' * 70, value='Type ``=race claim`` to receive prize money.')
         embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
