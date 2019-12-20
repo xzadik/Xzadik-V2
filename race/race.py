@@ -355,7 +355,7 @@ class Race:
         cooldown = self.check_cooldown(author.server)
         settings = self.check_config(author.server)
         cost = settings["Cost"]
-        timer = 600
+        timer = 420
 
         channel = ctx.message.channel
         if channel.name != "race":
