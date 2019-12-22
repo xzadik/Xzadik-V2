@@ -346,16 +346,16 @@ class Race:
 
         if data['Race Active']:
             if author.id in data['Players']:
-                return await self.bot.say("You are already in the race!")
+                return await self.bot.say("You are already in the Maid race!")
             elif not self.bank_check(settings, author):
                 return await self.bot.say("You do **Not** meet the __Cost of Entry__. You need at least **{} credits**. \n\n>>> **Register** for a New bank account with `cg!register`\n**Collect** your Payday Every 5m with `cg!payday`\n".format(cost))
             elif len(data['Players']) == 10:
-                return await self.bot.say("There are no more spots left in the race!")
+                return await self.bot.say("There are no more spots left in the Maid race!")
             else:
                 bank = self.bot.get_cog('Economy').bank
                 bank.withdraw_credits(author, cost)
                 data['Players'][author.id] = {}
-                return await self.bot.say("**{}** entered the race!".format(author.display_name))
+                return await self.bot.say("**{}** entered the Maid race!".format(author.display_name))
 
         if time.time() - cooldown < timer:
             return await self.bot.say("You need to wait {} before starting another Maid race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
@@ -378,8 +378,8 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
-                           "to join! :triangular_flag_on_post:\n{}The {} will "
+        await self.bot.say(":triangular_flag_on_post: {} has started a Maid race! Type ``{}race enter`` "
+                           "to join! :triangular_flag_on_post:\n{}The {} race will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
 
@@ -387,7 +387,7 @@ class Race:
 
         racers = self.game_setup(author, data, settings['Mode'])
 
-        await self.bot.say(":checkered_flag: The race is now in progress :checkered_flag:")
+        await self.bot.say(":checkered_flag: The Maid race is now in progress :checkered_flag:")
 
         data['Race Start'] = True
 
@@ -418,7 +418,7 @@ class Race:
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
         embed.add_field(name='-' * 70, value='Type ``cg!race claim`` to receive prize money.')
-        embed.title = "Race Results"
+        embed.title = "Maid race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
 
