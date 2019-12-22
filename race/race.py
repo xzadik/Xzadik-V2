@@ -342,13 +342,13 @@ class Race:
 
         channel = ctx.message.channel
         if channel.name != "maid-cafe":
-            return await self.bot.say("You cannot run this command in this channel. Please run this command in <#656707057973723186>")
+            return await self.bot.say("You **cannot** run this **command** in this channel. Please run this command in <#656707057973723186>")
 
         if data['Race Active']:
             if author.id in data['Players']:
                 return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits. \n\n>>> **Register** for a New bank account with `cg!register`\n**Collect** your Payday Every 5m with `cg!payday`".format(cost))
+                return await self.bot.say("You do **Not** meet the __cost of entry__. You need at least **{} credits**. \n\n>>> **Register** for a New bank account with `cg!register`\n**Collect** your Payday Every 5m with `cg!payday`".format(cost))
             elif len(data['Players']) == 10:
                 return await self.bot.say("There are no more spots left in the race!")
             else:
@@ -358,13 +358,13 @@ class Race:
                 return await self.bot.say("**{}** entered the race!".format(author.display_name))
 
         if time.time() - cooldown < timer:
-            return await self.bot.say("You need to wait {} before starting another race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
+            return await self.bot.say("You need to wait {} before starting another Maid race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
 
         if self.bank_check(settings, author):
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits. \n\n>>> **Register** for a New bank account with `cg!register`\n**Collect** your Payday Every 5m with `cg!payday`".format(cost))
+            return await self.bot.say("You do **Not** meet the __cost of entry__. You need at least **{} credits**. \n\n>>> **Register** for a New bank account with `cg!register`\n**Collect** your Payday Every 5m with `cg!payday`".format(cost))
 
         role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
