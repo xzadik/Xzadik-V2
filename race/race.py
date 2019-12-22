@@ -348,7 +348,7 @@ class Race:
             if author.id in data['Players']:
                 return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.\nRegister for a new bank account with `cg!register".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.\n**Register** for a **New** __Bank account__ with `cg!register`".format(cost))
             elif len(data['Players']) == 10:
                 return await self.bot.say("There are no more spots left in the race!")
             else:
@@ -364,7 +364,9 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits. \nRegister for a new bank account with `cg!register".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.
+                                      \n**Register** for a **New** __Bank account__ with `cg!register
+                                      \n**Collect** your **Payday** __Every 5m__ with `cg!payday` ".format(cost))
 
         role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
