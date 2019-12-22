@@ -15,7 +15,7 @@ from .utils import checks
 from .utils.dataIO import dataIO
 
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
-credits = "A Bot by >_Xzadik | CRZA5
+credits = "A Bot by >_Xzadik | CRZA5"
 
 animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:650464598247473197>', 'fast'), 
            ('<:crAngry:650494450090377231>', 'fast'), ('<:crThinking:650494535989985286>', 'slow'),
@@ -25,6 +25,7 @@ animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:6504645982
            ('<:crToxic:650494681712427031>', 'predator'), ('<:crStare:650464500541030410>', 'predator'), 
            ('<:crLove:650493813483110453>', 'special'), ('<:crThankyou:650352813133660160>', 'special'), 
            ('<:crSure:650494612573650944>', 'slow'), ('<:crNeko:650494103775215677>', 'slow'))
+
 
 class PluralDict(dict):
     def __missing__(self, key):
@@ -52,7 +53,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:crUsui:658152930930851869> **{}** <:crCoffee:658153076867334204>  [{}]".format(self.current, self.user.display_name)
+        field = "<:crmanga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
@@ -227,16 +228,13 @@ class Race:
     @checks.admin_or_permissions(manage_server=True)
     async def _prize_setrace(self, ctx, minimum: int, maximum: int):
         """Set the prize range
-
         A number of credits will be randomly picked from the set
         miminum to the set maximum.
-
         Parameters:
             minimum: integer
                 Must be lower than maximum
             maximum: integer
                 Must be higher than minimum
-
         Returns:
             Bot replies with invalid mode
             Bot replies with valid mode and saves choice
@@ -254,7 +252,6 @@ class Race:
     @checks.admin_or_permissions(manage_server=True)
     async def _cost_setrace(self, ctx, num: int):
         """Set the cost to enter the race
-
         Returns:
             Bot replies with invalid mode
             Bot replies with valid mode and saves choice
@@ -270,15 +267,12 @@ class Race:
     @checks.admin_or_permissions(manage_server=True)
     async def _time_setrace(self, ctx, time: int):
         """Set the time players have to enter a race
-
         Amount of time for the bot to wait for entrants until the race
         is ready to begin.
-
         Parameters:
             time: integer
                 Unit is expressed in seconds
                 Default is set to 60 seconds
-
         Returns:
             Bo
         """
@@ -296,13 +290,10 @@ class Race:
     @checks.admin_or_permissions(manage_server=True)
     async def _mode_setrace(self, ctx, mode: str):
         """Set the race mode
-
         Standard Mode assigns everyone a turtle. Everyone has the same
         random movement formula.
-
         Zoo Mode assigns every entrant a random animal. Animals are grouped into
         classes that meet a special formula for movement. 8 different animal classes!
-
         Parameters:
             mode: string
                 Must be standard or zoo
@@ -333,12 +324,10 @@ class Race:
     @race.command(name="enter", pass_context=True)
     async def _enter_race(self, ctx):
         """Start an animal race and enter yourself as participant
-
             Returns:
                 Two text outputs. One to start the race,
                 and the second to represent the race. The second
                 msg will be edited multiple times to represent the race.
-
             Notes:
                 Must wait 2 minutes after every race to start a new one.
                 You cannot start a race if a race is already active.
@@ -357,32 +346,32 @@ class Race:
         timer = 420
 
         channel = ctx.message.channel
-        if channel.name != "maid-café":
-            return await self.bot.say("You cannot run this command in this channel. Please run this command in <#656707057973723186>")
+        if channel.name != "race":
+            return await self.bot.say("You cannot run this command in this channel. Please run this command in #race")
 
         if data['Race Active']:
             if author.id in data['Players']:
-                return await self.bot.say("You are already in the Maid race!")
+                return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
             elif len(data['Players']) == 10:
-                return await self.bot.say("There are no more spots left in the Maid race!")
+                return await self.bot.say("There are no more spots left in the race!")
             else:
                 bank = self.bot.get_cog('Economy').bank
                 bank.withdraw_credits(author, cost)
                 data['Players'][author.id] = {}
-                return await self.bot.say("**{}** entered the Maid race!".format(author.display_name))
+                return await self.bot.say("**{}** entered the race!".format(author.display_name))
 
         if time.time() - cooldown < timer:
-            return await self.bot.say("You need to wait {} before starting another Maid race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
+            return await self.bot.say("You need to wait {} before starting another race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
 
         if self.bank_check(settings, author):
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} CrunchyCoins.".format(cost))
 
-        role_name = "Maid"
+        role_name = "Race"
         raceRole = discord.utils.get(server.roles, name=role_name)
         if raceRole is None:
             await self.bot.create_role(server, name=role_name)
@@ -394,7 +383,7 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a Maid race! Type ``{}race enter`` "
+        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
                            "to join! :triangular_flag_on_post:\n{}The {} will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
@@ -403,7 +392,7 @@ class Race:
 
         racers = self.game_setup(author, data, settings['Mode'])
 
-        await self.bot.say(":checkered_flag: The Maid race is now in progress :checkered_flag:")
+        await self.bot.say(":checkered_flag: The race is now in progress :checkered_flag:")
 
         data['Race Start'] = True
 
@@ -434,7 +423,7 @@ class Race:
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
         embed.add_field(name='-' * 70, value='Type ``cg!race claim`` to receive prize money.')
-        embed.title = "Maid Race Results"
+        embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
 
@@ -445,16 +434,13 @@ class Race:
     @race.command(name="claim", pass_context=True)
     async def _claim_race(self, ctx):
         """Claim your prize from the animal race
-
         Returns:
                 One of three outcomes based on result
             :Text output giving random credits from 10-100
             :Text output telling you are not the winner
             :Text output telling you to get a bank account
-
         Raises:
             cogs.economy.NoAccount Error when bank account not found.
-
         Notes:
             If you do not have a bank account with economy, the bot will take your money
             and spend it on cheap booze and potatoes.
@@ -469,7 +455,7 @@ class Race:
             return
 
         if all(v is None for v in [data['First'], data['Second'], data['Third']]):
-            return await self.bot.say("Scram kid. You didn't win nothing yet.")
+            return await self.bot.say("There is nothing to collect.")
 
         if data['First'] is not None:
             if data['First'][0].id == author.id:
