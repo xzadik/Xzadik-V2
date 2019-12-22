@@ -342,7 +342,7 @@ class Race:
 
         channel = ctx.message.channel
         if channel.name != "maid-cafe":
-            return await self.bot.say("You **cannot** run this *command* in **~~This Channel~~**. Please run this *command* in <#656707057973723186>")
+            return await self.bot.say("You **cannot** run this ***command*** in **~~This Channel~~**. Please run this ***command*** in <#656707057973723186>")
 
         if data['Race Active']:
             if author.id in data['Players']:
@@ -468,7 +468,7 @@ class Race:
                 data['Third'] = None
 
         if prize == prize_pool:
-            return await self.bot.say("Scram kid. You didn't win nothing yet.")
+            return await self.bot.say("||Scram kid.|| You didn't win nothing yet.")
 
         try:
             bank = self.bot.get_cog('Economy').bank
@@ -483,7 +483,7 @@ class Race:
                                "account.\nTo teach you a lesson, your winnings are mine this "
                                "time. Now go register!")
         else:
-            await self.bot.say("After paying for >_Xzadik's tax, Entrance fees, and Crunchyroll fees, "
+            await self.bot.say("After paying for >_Xzadik's tax, Entrance fees, and Anime Café fees, "
                                "you get **{}** credits.".format(prize))
 
     def bank_check(self, settings, user):
