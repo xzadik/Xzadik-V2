@@ -15,17 +15,11 @@ from .utils import checks
 from .utils.dataIO import dataIO
 
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
-credits = "A Bot by >_Xzadik | CRZA5"
+credits = "A Bot by >_Xzadik | CRZA5
 
-animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:650464598247473197>', 'fast'), 
-           ('<:crAngry:650494450090377231>', 'fast'), ('<:crThinking:650494535989985286>', 'slow'),
-           ('<:crAaah:650465279180013600>', 'fast'), ('<:crOK:650271965801611275>', 'fast'), 
-           ('<:crNo:650353277614948362>', 'fast'), ('<:crGood:650352539728085027>', 'steady'), 
-           ('<:crBubble:650494146422898698>', 'abberant'), ('<:crGlasses:650493868760104979>', 'abberant'),
-           ('<:crToxic:650494681712427031>', 'predator'), ('<:crStare:650464500541030410>', 'predator'), 
-           ('<:crLove:650493813483110453>', 'special'), ('<:crThankyou:650352813133660160>', 'special'), 
-           ('<:crSure:650494612573650944>', 'slow'), ('<:crNeko:650494103775215677>', 'slow'))
-
+animals = (('<:crLucao:658153339329970187>', 'slow'), ('<:crTohru:658185371321892864>', 'fast'), 
+           ('<:crKanna:658186008445321226>', 'steady'), ('<:crElma:658154242284191747>', 'abberant'),
+           ('<:crMisaki:658173353638756358>', 'special'))
 
 class PluralDict(dict):
     def __missing__(self, key):
@@ -53,7 +47,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:crmanga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<:crUsui:658152930930851869> **{}** <:crCoffee:658153076867334204>  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
@@ -363,11 +357,11 @@ class Race:
 
         if data['Race Active']:
             if author.id in data['Players']:
-                return await self.bot.say("You are already in the race!")
+                return await self.bot.say("You are already in the Maid race!")
             elif not self.bank_check(settings, author):
                 return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
             elif len(data['Players']) == 10:
-                return await self.bot.say("There are no more spots left in the race!")
+                return await self.bot.say("There are no more spots left in the Maid race!")
             else:
                 bank = self.bot.get_cog('Economy').bank
                 bank.withdraw_credits(author, cost)
@@ -375,15 +369,15 @@ class Race:
                 return await self.bot.say("**{}** entered the Maid race!".format(author.display_name))
 
         if time.time() - cooldown < timer:
-            return await self.bot.say("You need to wait {} before starting another race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
+            return await self.bot.say("You need to wait {} before starting another Maid race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
 
         if self.bank_check(settings, author):
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} CrunchyCoins.".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
 
-        role_name = "Race"
+        role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
         if raceRole is None:
             await self.bot.create_role(server, name=role_name)
@@ -404,7 +398,7 @@ class Race:
 
         racers = self.game_setup(author, data, settings['Mode'])
 
-        await self.bot.say(":checkered_flag: The race is now in progress :checkered_flag:")
+        await self.bot.say(":checkered_flag: The Maid race is now in progress :checkered_flag:")
 
         data['Race Start'] = True
 
@@ -435,7 +429,7 @@ class Race:
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
         embed.add_field(name='-' * 70, value='Type ``cg!race claim`` to receive prize money.')
-        embed.title = "Race Results"
+        embed.title = "Maid Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
 
@@ -470,7 +464,7 @@ class Race:
             return
 
         if all(v is None for v in [data['First'], data['Second'], data['Third']]):
-            return await self.bot.say("There is nothing to collect.")
+            return await self.bot.say("Scram kid. You didn't win nothing yet.")
 
         if data['First'] is not None:
             if data['First'][0].id == author.id:
