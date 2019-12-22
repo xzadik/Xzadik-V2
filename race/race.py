@@ -358,21 +358,21 @@ class Race:
         timer = 420
 
         channel = ctx.message.channel
-        if channel.name != "race":
+        if channel.name != "maid-café":
             return await self.bot.say("You cannot run this command in this channel. Please run this command in <#656707057973723186>")
 
         if data['Race Active']:
             if author.id in data['Players']:
                 return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
             elif len(data['Players']) == 10:
                 return await self.bot.say("There are no more spots left in the race!")
             else:
                 bank = self.bot.get_cog('Economy').bank
                 bank.withdraw_credits(author, cost)
                 data['Players'][author.id] = {}
-                return await self.bot.say("**{}** entered the race!".format(author.display_name))
+                return await self.bot.say("**{}** entered the Maid race!".format(author.display_name))
 
         if time.time() - cooldown < timer:
             return await self.bot.say("You need to wait {} before starting another race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
@@ -395,7 +395,7 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
+        await self.bot.say(":triangular_flag_on_post: {} has started a Maid race! Type ``{}race enter`` "
                            "to join! :triangular_flag_on_post:\n{}The {} will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
