@@ -48,7 +48,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:crUsui:658152930930851869> **{}** <:crCoffee:658153076867334204>  [{}]".format(self.current, self.user.display_name)
+        field = "<:crmanga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
@@ -346,12 +346,11 @@ class Race:
 
         if data['Race Active']:
             if author.id in data['Players']:
-                return await self.bot.say("You are already in the Maid race!")
+                return await self.bot.say("You are already in the race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.
-                \nOpen a bank account with `cg!register or Collect your payday every 5m with `cg!payday`".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
             elif len(data['Players']) == 10:
-                return await self.bot.say("There are no more spots left in the Maid race!")
+                return await self.bot.say("There are no more spots left in the race!")
             else:
                 bank = self.bot.get_cog('Economy').bank
                 bank.withdraw_credits(author, cost)
@@ -365,8 +364,7 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.
-            \nOpen a bank account with `cg!register or Collect your payday every 5m with `cg!payday`".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
 
         role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
@@ -380,8 +378,8 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a Maid race! Type ``{}race enter`` "
-                           "to join! :triangular_flag_on_post:\n{}The {} race will "
+        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
+                           "to join! :triangular_flag_on_post:\n{}The {} will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
 
@@ -389,7 +387,7 @@ class Race:
 
         racers = self.game_setup(author, data, settings['Mode'])
 
-        await self.bot.say(":checkered_flag: The Maid race is now in progress :checkered_flag:")
+        await self.bot.say(":checkered_flag: The race is now in progress :checkered_flag:")
 
         data['Race Start'] = True
 
@@ -420,7 +418,7 @@ class Race:
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
         embed.add_field(name='-' * 70, value='Type ``cg!race claim`` to receive prize money.')
-        embed.title = "Maid race Results"
+        embed.title = "Race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
 
