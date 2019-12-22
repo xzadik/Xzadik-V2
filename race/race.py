@@ -17,14 +17,9 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "A Bot by >_Xzadik | CRZA5"
 
-animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:650464598247473197>', 'fast'), 
-           ('<:crAngry:650494450090377231>', 'fast'), ('<:crThinking:650494535989985286>', 'slow'),
-           ('<:crAaah:650465279180013600>', 'fast'), ('<:crOK:650271965801611275>', 'fast'), 
-           ('<:crNo:650353277614948362>', 'fast'), ('<:crGood:650352539728085027>', 'steady'), 
-           ('<:crBubble:650494146422898698>', 'abberant'), ('<:crGlasses:650493868760104979>', 'abberant'),
-           ('<:crToxic:650494681712427031>', 'predator'), ('<:crStare:650464500541030410>', 'predator'), 
-           ('<:crLove:650493813483110453>', 'special'), ('<:crThankyou:650352813133660160>', 'special'), 
-           ('<:crSure:650494612573650944>', 'slow'), ('<:crNeko:650494103775215677>', 'slow'))
+animals = (('<:crLucao:658153339329970187>', 'slow'), ('<:crTohru:658185371321892864>', 'fast'), 
+           ('<:crKanna:658186008445321226>', 'steady'), ('<:crElma:658154242284191747>', 'abberant'),
+           ('<:crMisaki:658173353638756358>', 'special'))
 
 
 class PluralDict(dict):
@@ -53,7 +48,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:crmanga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<:crUsui:658152930930851869> **{}** <:crCoffee:658153076867334204>  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
@@ -351,11 +346,13 @@ class Race:
 
         if data['Race Active']:
             if author.id in data['Players']:
-                return await self.bot.say("You are already in the race!")
+                return await self.bot.say("You are already in the Maid race!")
             elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
+                return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.
+                \nOpen a bank account with `cg!register or
+                \nCollect your payday every 5m with `cg!payday`".format(cost))
             elif len(data['Players']) == 10:
-                return await self.bot.say("There are no more spots left in the race!")
+                return await self.bot.say("There are no more spots left in the Maid race!")
             else:
                 bank = self.bot.get_cog('Economy').bank
                 bank.withdraw_credits(author, cost)
@@ -369,7 +366,9 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.
+            \nOpen a bank account with `cg!register or
+            \nCollect your payday every 5m with `cg!payday`".format(cost))
 
         role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
@@ -383,8 +382,8 @@ class Race:
         wait = settings['Time']
 
         await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
-                           "to join! :triangular_flag_on_post:\n{}The {} will "
+        await self.bot.say(":triangular_flag_on_post: {} has started a Maid race! Type ``{}race enter`` "
+                           "to join! :triangular_flag_on_post:\n{}The {} race will "
                            "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
         await self.bot.edit_role(server, raceRole, mentionable=False)
 
@@ -392,7 +391,7 @@ class Race:
 
         racers = self.game_setup(author, data, settings['Mode'])
 
-        await self.bot.say(":checkered_flag: The race is now in progress :checkered_flag:")
+        await self.bot.say(":checkered_flag: The Maid race is now in progress :checkered_flag:")
 
         data['Race Start'] = True
 
@@ -423,7 +422,7 @@ class Race:
         embed.add_field(name=second, value=sv)
         embed.add_field(name=third, value=tv)
         embed.add_field(name='-' * 70, value='Type ``cg!race claim`` to receive prize money.')
-        embed.title = "Race Results"
+        embed.title = "Maid race Results"
         embed.set_footer(text=credits, icon_url=creditIcon)
         await self.bot.say(content=mention, embed=embed)
 
