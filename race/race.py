@@ -342,7 +342,7 @@ class Race:
 
         channel = ctx.message.channel
         if channel.name != "maid-cafe":
-            return await self.bot.say("You **cannot** run this **command** in this channel. Please run this command in <#656707057973723186>")
+            return await self.bot.say("You **cannot** run this **command** in __This Channel__. Please run this **command** in <#656707057973723186>")
 
         if data['Race Active']:
             if author.id in data['Players']:
