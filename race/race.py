@@ -17,9 +17,14 @@ from .utils.dataIO import dataIO
 creditIcon = "https://i.imgur.com/a0lbPXh.png"
 credits = "A Bot by >_Xzadik | CRZA5
 
-animals = (('<:crLucao:658153339329970187>', 'slow'), ('<:crTohru:658185371321892864>', 'fast'), 
-           ('<:crKanna:658186008445321226>', 'steady'), ('<:crElma:658154242284191747>', 'abberant'),
-           ('<:crMisaki:658173353638756358>', 'special'))
+animals = (('<:crHmph:650352968427634708>', 'fast'), ('<:crClickClick:650464598247473197>', 'fast'), 
+           ('<:crAngry:650494450090377231>', 'fast'), ('<:crThinking:650494535989985286>', 'slow'),
+           ('<:crAaah:650465279180013600>', 'fast'), ('<:crOK:650271965801611275>', 'fast'), 
+           ('<:crNo:650353277614948362>', 'fast'), ('<:crGood:650352539728085027>', 'steady'), 
+           ('<:crBubble:650494146422898698>', 'abberant'), ('<:crGlasses:650493868760104979>', 'abberant'),
+           ('<:crToxic:650494681712427031>', 'predator'), ('<:crStare:650464500541030410>', 'predator'), 
+           ('<:crLove:650493813483110453>', 'special'), ('<:crThankyou:650352813133660160>', 'special'), 
+           ('<:crSure:650494612573650944>', 'slow'), ('<:crNeko:650494103775215677>', 'slow'))
 
 class PluralDict(dict):
     def __missing__(self, key):
