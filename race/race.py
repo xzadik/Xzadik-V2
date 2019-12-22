@@ -48,7 +48,7 @@ class Racer:
         self.current = Racer.track + self.animal
 
     def field(self):
-        field = "<:crmanga:656720974695366668> **{}** :flag_black:  [{}]".format(self.current, self.user.display_name)
+        field = "<:crUsui:658152930930851869> **{}** <:crCoffee:658153076867334204>  [{}]".format(self.current, self.user.display_name)
         return field
 
     def get_position(self):
