@@ -346,7 +346,7 @@ class Race:
         timer = 420
 
         channel = ctx.message.channel
-        if channel.name != "maid-café":
+        if channel.name != "maid-cafe":
             return await self.bot.say("You cannot run this command in this channel. Please run this command in <#656707057973723186>")
 
         if data['Race Active']:
@@ -369,9 +369,9 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} CrunchyCoins.".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.".format(cost))
 
-        role_name = "Race"
+        role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
         if raceRole is None:
             await self.bot.create_role(server, name=role_name)
