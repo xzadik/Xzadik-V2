@@ -364,9 +364,7 @@ class Race:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, cost)
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits.
-                                      \n**Register** for a **New** __Bank account__ with `cg!register
-                                      \n**Collect** your **Payday** __Every 5m__ with `cg!payday` ".format(cost))
+            return await self.bot.say("You do not meet the cost of entry. You need at least {} credits. \n\n>>> **Register** for a **New** __Bank account__ with `cg!register\n**Collect** your **Payday** __Every 5m__ with `cg!payday` ".format(cost))
 
         role_name = "Maid"
         raceRole = discord.utils.get(server.roles, name=role_name)
