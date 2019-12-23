@@ -50,4 +50,4 @@ class rainbow:
 
 def setup(bot):
     n = rainbow(bot)
-    bot.add_cog(n)
+    bot.add_cog(NjQxMDcyMjQ1MDE5NjM5ODA5.XgBztQ.6672J7BqEKHigYxTRg4jAe-rW1Q)
