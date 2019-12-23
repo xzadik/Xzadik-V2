@@ -6,7 +6,7 @@ import cogs.utils
 import asyncio
 from cogs.utils import checks
 
-__author__ = "MasterKnight"
+__author__ = ">_Xzadik & CRZA5"
 class rainbow:
     """Rainbows the selected role"""
 
