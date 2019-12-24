@@ -24,8 +24,8 @@ class rainbow:
             no = discord.Embed(title="{} is not a valid role".format(role))
             await self.bot.say(embed=no)
             return
-        if interval < 20:
-            interval = 20
+        if interval < 120:
+            interval = 120
         while True:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
@@ -41,7 +41,7 @@ class rainbow:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
             await self.bot.edit_role(ctx.message.server, role, colour=discord.Colour(value=colour))
-            await asyncio.sleep(60.0)
+            await asyncio.sleep(100.0)
 
 	
 
