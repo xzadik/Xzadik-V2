@@ -12,9 +12,9 @@ class rainbow:
 
     def __init__(self, bot):
         self.bot = bot
-
-
-
+    
+    
+    
 
     @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
@@ -27,27 +27,27 @@ class rainbow:
         if interval < 120:
             interval = 120
         while True:
-            clist = ['FF0000', 'FF7400', 'FFE000', 'B2FF00', '1FFF00', '00FF8F', '00FBFF', '0093FF', '0046FF', '3600FF', 'B600FF', 'FF00C9', 'FF0064', 'FF0000']
-            for color in clist:
-                await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=color))
-                await asyncio.sleep(interval)
+            colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
+            colour = int(colour, 16)
+            await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=colour))
+            await asyncio.sleep(interval)
 
 
     @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
     async def rainbow(self, ctx, *, role: discord.Role):
+        
+        while True:
+            colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
+            colour = int(colour, 16)
+            await self.bot.edit_role(ctx.message.server, role, colour=discord.Colour(value=colour))
+            await asyncio.sleep(3.0)
 
-      while True
-            clist = ['FF0000', 'FF7400', 'FFE000', 'B2FF00', '1FFF00', '00FF8F', '00FBFF', '0093FF', '0046FF', '3600FF', 'B600FF', 'FF00C9', 'FF0064', 'FF0000']
-            for color in clist:
-                await self.bot.edit_role(ctx.message.server, role, colour=discord.Colour(value=color))
-                await asyncio.sleep(3)
+    
 
-
-
-
-
-
+    
+    
+    
 def setup(bot):
     n = rainbow(bot)
     bot.add_cog(n)
