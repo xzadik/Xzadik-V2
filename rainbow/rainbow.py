@@ -24,8 +24,8 @@ class rainbow:
             no = discord.Embed(title="{} is not a valid role".format(role))
             await self.bot.say(embed=no)
             return
-        if interval < 120:
-            interval = 120
+        if interval < 5:
+            interval = 5
         while True:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
