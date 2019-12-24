@@ -41,7 +41,7 @@ class rainbow:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
             await self.bot.edit_role(ctx.message.server, role, colour=discord.Colour(value=colour))
-            await asyncio.sleep(5.0)
+            await asyncio.sleep(10.0)
 
 	
 
